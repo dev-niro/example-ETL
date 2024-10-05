@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{8CC0E3F9-1514-4358-8CCB-259C4132A9A0}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{0BCF8393-07FC-4280-A517-BB4E0FD9D307}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,17 +26,27 @@
           DTS:ConnectionString="Data Source=localhost;Initial Catalog=BikeZ;Integrated Security=True;Application Name=SSIS-Package-{A9512E1B-370E-4D58-AE77-CFE94B674BD8}localhost.BikeZ;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{0A855155-7039-4A6F-8BE4-A1338B63B02E}"
+      DTS:ObjectName="localhost.DimensionalBikeZ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DimensionalBikeZ;Integrated Security=True;Application Name=SSIS-Package-{0A855155-7039-4A6F-8BE4-A1338B63B02E}localhost.DimensionalBikeZ;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:refId="Package\Tarea Flujo de datos Cliente"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
       DTS:DTSID="{09C6BDA2-94BE-447B-ABC4-2B6E0FEB6E5D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:ObjectName="Tarea Flujo de datos Cliente"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -44,7 +54,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Tarea Flujo de datos\Destino de OLE DB"
+              refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
@@ -101,13 +111,13 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Destino de OLE DB.Connections[OleDbConnection]"
+                  refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Connections[OleDbConnection]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
@@ -118,22 +128,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -142,7 +152,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Get Clientes"
+              refId="Package\Tarea Flujo de datos Cliente\Get Clientes"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
@@ -185,7 +195,7 @@ FROM            Territorios INNER JOIN
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Get Clientes.Connections[IDbConnection]"
+                  refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.BikeZ]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.BikeZ]"
                   description="Administrador de conexiones administrado"
@@ -193,128 +203,128 @@ FROM            Territorios INNER JOIN
               </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET]"
+                  refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET]"
                   name="Salida de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
                       name="ClienteID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
                       name="Nombre"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
                       name="Apellido"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
                       length="3"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
                       name="PaisID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
                       name="TerritorioID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
                       dataType="i4"
                       name="ClienteID" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
                       dataType="wstr"
                       length="50"
                       name="Nombre" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
                       dataType="wstr"
                       length="50"
                       name="Apellido" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
                       dataType="wstr"
                       length="3"
                       name="PaisID" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
                       dataType="i4"
                       name="TerritorioID" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET]"
+                  refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET]"
                   isErrorOut="true"
                   name="Salida de error de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
                       name="ClienteID" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
                       name="Nombre" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
                       name="Apellido" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
                       dataType="wstr"
                       length="3"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
                       name="PaisID" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
                       name="TerritorioID" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -322,14 +332,279 @@ FROM            Territorios INNER JOIN
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Tarea Flujo de datos Cliente\Get DimClientes"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Get DimClientes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimClientes"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      name="ClienteID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
+                      name="Apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      dataType="i4"
+                      name="ClienteID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="50"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      name="PaisID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      dataType="i4"
+                      name="TerritorioID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      name="ClienteID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
+                      name="Apellido" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos Cliente\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos Cliente\Mezclar"
+              componentClassID="Microsoft.Merge"
+              contactInfo="Mezclar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina las filas de varios flujos de datos ordenados en un solo flujo de datos ordenados. A diferencia de la combinación de mezcla, todas las filas fluyen hacia la salida. Por ejemplo, se combinan dos listas ordenadas de clientes en una sola lista ordenada. Si el orden no es importante, use la transformación Unión de todo. "
+              name="Mezclar"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos Cliente\Mezclar.Inputs[Entrada de Mezclar 1]"
+                  name="Entrada de Mezclar 1">
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos Cliente\Mezclar.Inputs[Entrada de Mezclar 2]"
+                  name="Entrada de Mezclar 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos Cliente\Mezclar.Outputs[Salida de Mezclar 1]"
+                  name="Salida de Mezclar 1">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos Cliente\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos Cliente\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos Cliente\Ordenar.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos Cliente\Ordenar 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos Cliente\Ordenar 1.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos Cliente\Ordenar 1.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
-          <paths>
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
-              endId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
-              name="Salida de origen de ADO NET"
-              startId="Package\Tarea Flujo de datos\Get Clientes.Outputs[Salida de origen de ADO NET]" />
-          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -347,64 +622,54 @@ FROM            Territorios INNER JOIN
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="176,42"
-          Id="Package\Tarea Flujo de datos"
+          Size="211,42"
+          Id="Package\Tarea Flujo de datos Cliente"
           TopLeft="170.5,114.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Tarea Flujo de datos">
+    design-time-name="Package\Tarea Flujo de datos Cliente">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="135,42"
-          Id="Package\Tarea Flujo de datos\Get Clientes"
-          TopLeft="312,138" />
+          Id="Package\Tarea Flujo de datos Cliente\Get Clientes"
+          TopLeft="348,111" />
         <NodeLayout
           Size="168,42"
-          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
-          TopLeft="425.5,259.5" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
-          TopLeft="379.5,180">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="130,79.5"
-              Start="0,0"
-              End="130,72">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.75"
-                    Point2="0,39.75"
-                    Point3="4,39.75" />
-                  <mssgle:LineSegment
-                    End="126,39.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="126,39.75"
-                    Point2="130,39.75"
-                    Point3="130,43.75" />
-                  <mssgle:LineSegment
-                    End="130,72" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Tarea Flujo de datos Cliente\Destino de OLE DB"
+          TopLeft="426.5,303.5" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Tarea Flujo de datos Cliente\Ordenar"
+          TopLeft="348,157" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Tarea Flujo de datos Cliente\Mezclar"
+          TopLeft="450,230" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Tarea Flujo de datos Cliente\Ordenar 1"
+          TopLeft="527.5,159.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Tarea Flujo de datos Cliente\Get DimClientes"
+          TopLeft="526.5,114.5" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Get Clientes">
+    design-time-name="Package\Tarea Flujo de datos Cliente\Get Clientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos Cliente\Get DimClientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
