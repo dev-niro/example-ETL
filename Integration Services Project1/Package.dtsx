@@ -7,12 +7,12 @@
   DTS:CreatorName="SJAPCA03LC0610\Cetecom"
   DTS:DTSID="{BA249D5B-A00D-48DD-AF86-4FF7A78C36E8}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{918CB7C5-0814-48D2-BB86-5C03D6E53005}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{E7D12D20-F003-4E9F-B940-95772FAC60B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5915,12 +5915,12 @@ FROM            Productos</property>
       DTS:To="Package\Tarea Flujo de Datos Fecha" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -6405,33 +6405,123 @@ FROM            Productos</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="133,42"
-          Id="Package\Tarea Flujo de datos Clientes\Merge Join"
-          TopLeft="448,281" />
+          Size="183,42"
+          Id="Package\Tarea Flujo de datos Clientes\Destino de ADO NET"
+          TopLeft="327,453" />
         <NodeLayout
-          Size="135,42"
-          Id="Package\Tarea Flujo de datos Clientes\Get Clientes"
-          TopLeft="348,111" />
+          Size="154,42"
+          Id="Package\Tarea Flujo de datos Clientes\Get DimClientes"
+          TopLeft="550.5,108.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\Tarea Flujo de datos Clientes\Sort Clientes"
           TopLeft="349,181" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\Tarea Flujo de datos Clientes\Destino de ADO NET"
-          TopLeft="327,453" />
+          Size="162,42"
+          Id="Package\Tarea Flujo de datos Clientes\Sort DimClientes"
+          TopLeft="536,183" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Tarea Flujo de datos Clientes\Merge Join"
+          TopLeft="448,281" />
         <NodeLayout
           Size="159,42"
           Id="Package\Tarea Flujo de datos Clientes\Conditional Split"
           TopLeft="440,355" />
         <NodeLayout
-          Size="162,42"
-          Id="Package\Tarea Flujo de datos Clientes\Sort DimClientes"
-          TopLeft="536,183" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Tarea Flujo de datos Clientes\Get DimClientes"
-          TopLeft="550.5,108.5" />
+          Size="135,42"
+          Id="Package\Tarea Flujo de datos Clientes\Get Clientes"
+          TopLeft="348,111" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos Clientes.Paths[Sort Output]"
+          TopLeft="617,225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.6666666666666,56"
+              Start="0,0"
+              End="-81.6666666666666,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2005943536404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2005943536404"
+                    Point2="0,33.2005943536404"
+                    Point3="-4,33.2005943536404" />
+                  <mssgle:LineSegment
+                    End="-77.6666666666666,33.2005943536404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.6666666666666,33.2005943536404"
+                    Point2="-81.6666666666666,33.2005943536404"
+                    Point3="-81.6666666666666,37.2005943536404" />
+                  <mssgle:LineSegment
+                    End="-81.6666666666666,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET1]"
+          TopLeft="627.5,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,32.5"
+              Start="0,0"
+              End="-10.5,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.25"
+                    Point2="0,16.25"
+                    Point3="-4,16.25" />
+                  <mssgle:LineSegment
+                    End="-6.5,16.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,16.25"
+                    Point2="-10.5,16.25"
+                    Point3="-10.5,20.25" />
+                  <mssgle:LineSegment
+                    End="-10.5,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET]"
+          TopLeft="417.75,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de ordenación]"
           TopLeft="420,223">
@@ -6524,107 +6614,9 @@ FROM            Productos</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos Clientes.Paths[Sort Output]"
-          TopLeft="617,225">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-81.6666666666666,56"
-              Start="0,0"
-              End="-81.6666666666666,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2005943536404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2005943536404"
-                    Point2="0,33.2005943536404"
-                    Point3="-4,33.2005943536404" />
-                  <mssgle:LineSegment
-                    End="-77.6666666666666,33.2005943536404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-77.6666666666666,33.2005943536404"
-                    Point2="-81.6666666666666,33.2005943536404"
-                    Point3="-81.6666666666666,37.2005943536404" />
-                  <mssgle:LineSegment
-                    End="-81.6666666666666,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET1]"
-          TopLeft="627.5,150.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.5,32.5"
-              Start="0,0"
-              End="-10.5,25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.25"
-                    Point2="0,16.25"
-                    Point3="-4,16.25" />
-                  <mssgle:LineSegment
-                    End="-6.5,16.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,16.25"
-                    Point2="-10.5,16.25"
-                    Point3="-10.5,20.25" />
-                  <mssgle:LineSegment
-                    End="-10.5,25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET]"
-          TopLeft="417.75,153">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos Clientes\Get Clientes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos Clientes\Destino de ADO NET">
     <Properties>
@@ -6635,6 +6627,14 @@ FROM            Productos</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos Clientes\Get DimClientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos Clientes\Get Clientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6705,7 +6705,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6739,7 +6741,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6761,7 +6765,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6783,7 +6789,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6829,7 +6837,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6865,14 +6875,6 @@ FROM            Productos</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="99,42"
-          Id="Package\Tarea Flujo de Datos Factos\Sort"
-          TopLeft="233,197" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Tarea Flujo de Datos Factos\Sort 1"
-          TopLeft="456,190" />
-        <NodeLayout
           Size="183,42"
           Id="Package\Tarea Flujo de Datos Factos\Destino de ADO NET"
           TopLeft="309,478" />
@@ -6881,17 +6883,25 @@ FROM            Productos</property>
           Id="Package\Tarea Flujo de Datos Factos\Merge Join"
           TopLeft="326,310" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Tarea Flujo de Datos Factos\Get FactVentas"
-          TopLeft="434,104" />
-        <NodeLayout
           Size="134,42"
           Id="Package\Tarea Flujo de Datos Factos\Get Ventas"
           TopLeft="218,100" />
         <NodeLayout
+          Size="155,42"
+          Id="Package\Tarea Flujo de Datos Factos\Get FactVentas"
+          TopLeft="434,104" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Tarea Flujo de Datos Factos\Sort 1"
+          TopLeft="456,190" />
+        <NodeLayout
           Size="159,42"
           Id="Package\Tarea Flujo de Datos Factos\Conditional Split"
           TopLeft="319,385" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Tarea Flujo de Datos Factos\Sort"
+          TopLeft="233,197" />
         <EdgeLayout
           Id="Package\Tarea Flujo de Datos Factos.Paths[Sort Output1]"
           TopLeft="510,232">
@@ -7062,7 +7072,7 @@ FROM            Productos</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de Datos Factos\Get FactVentas">
+    design-time-name="Package\Tarea Flujo de Datos Factos\Get Ventas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7070,7 +7080,7 @@ FROM            Productos</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de Datos Factos\Get Ventas">
+    design-time-name="Package\Tarea Flujo de Datos Factos\Get FactVentas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7141,7 +7151,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7175,7 +7187,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7197,7 +7211,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7219,7 +7235,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7289,7 +7307,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7383,7 +7403,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7417,7 +7439,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7451,7 +7475,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7485,7 +7511,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7531,7 +7559,9 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
