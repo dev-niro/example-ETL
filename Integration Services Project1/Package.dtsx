@@ -7,12 +7,12 @@
   DTS:CreatorName="SJAPCA03LC0610\Cetecom"
   DTS:DTSID="{BA249D5B-A00D-48DD-AF86-4FF7A78C36E8}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{824193F5-C2E7-45A5-AB0A-04E72A6FB749}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{B53CFC21-6025-4B6D-B06E-3A0ED82870C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,37 +27,13 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.BikeZ 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{85DD691C-4B43-4A31-9D1C-B62C9D06844E}"
-      DTS:ObjectName="localhost.BikeZ 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BikeZ;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{D9CA7204-40BC-40E6-B6F4-E33D306C6749}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{D7FC3BC7-604F-4DD2-83BA-A636B6DB0C27}"
       DTS:ObjectName="localhost.DimensionalBikeZ">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DimensionalBikeZ;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{54EBD771-487B-4835-A61C-CF40A545003A}"
-      DTS:ObjectName="localhost.DimensionalBikeZ1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DimensionalBikeZ;Integrated Security=True;Application Name=SSIS-Package-{54EBD771-487B-4835-A61C-CF40A545003A}localhost.DimensionalBikeZ1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DimensionalBikeZ;Integrated Security=True;Application Name=SSIS-Package-{D7FC3BC7-604F-4DD2-83BA-A636B6DB0C27}localhost.DimensionalBikeZ;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -203,8 +179,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Categorias\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -429,8 +405,8 @@ FROM            DimCategorias</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Categorias\Get DimCategorias.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -941,8 +917,8 @@ FROM            DimCategorias</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -974,19 +950,6 @@ FROM            DimCategorias</property>
                       cachedName="Apellido"
                       externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Apellido]"
                       lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[Apellido]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[PaisID]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="PaisID"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[PaisID]"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[PaisID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[TerritorioID]"
-                      cachedDataType="i4"
-                      cachedName="TerritorioID"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TerritorioID]"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[TerritorioID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1004,15 +967,6 @@ FROM            DimCategorias</property>
                       dataType="wstr"
                       length="50"
                       name="Apellido" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      name="PaisID" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TerritorioID]"
-                      dataType="i4"
-                      name="TerritorioID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1078,7 +1032,7 @@ FROM            Territorios INNER JOIN
                   dataType="System.Int32"
                   description="Especificar el modo de recuperar información de columnas externas"
                   name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
@@ -1125,25 +1079,6 @@ FROM            Territorios INNER JOIN
                       lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
                       name="Apellido"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
-                      name="PaisID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
-                      name="TerritorioID"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1161,15 +1096,6 @@ FROM            Territorios INNER JOIN
                       dataType="wstr"
                       length="50"
                       name="Apellido" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      name="PaisID" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
-                      dataType="i4"
-                      name="TerritorioID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1194,17 +1120,6 @@ FROM            Territorios INNER JOIN
                       length="50"
                       lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
                       name="Apellido" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
-                      name="PaisID" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
-                      name="TerritorioID" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
@@ -1256,7 +1171,7 @@ FROM            DimClientes</property>
                   dataType="System.Int32"
                   description="Especificar el modo de recuperar información de columnas externas"
                   name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
@@ -1264,8 +1179,8 @@ FROM            DimClientes</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -1283,45 +1198,6 @@ FROM            DimClientes</property>
                       lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
                       name="ClienteID"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
-                      name="Nombre"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]"
-                      name="Apellido"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
-                      name="PaisID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
-                      name="TerritorioID"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1329,25 +1205,6 @@ FROM            DimClientes</property>
                       refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
                       dataType="i4"
                       name="ClienteID" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
-                      dataType="wstr"
-                      length="50"
-                      name="Nombre" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[Apellido]"
-                      dataType="wstr"
-                      length="50"
-                      name="Apellido" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      name="PaisID" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
-                      dataType="i4"
-                      name="TerritorioID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1360,29 +1217,6 @@ FROM            DimClientes</property>
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
                       name="ClienteID" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
-                      name="Nombre" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[Apellido]"
-                      name="Apellido" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
-                      name="PaisID" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
-                      name="TerritorioID" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
@@ -1450,17 +1284,6 @@ FROM            DimClientes</property>
                       cachedLength="50"
                       cachedName="Apellido"
                       lineageId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[Apellido]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Left Input].Columns[PaisID]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="PaisID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[PaisID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Left Input].Columns[TerritorioID]"
-                      cachedDataType="i4"
-                      cachedName="TerritorioID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[TerritorioID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1475,29 +1298,6 @@ FROM            DimClientes</property>
                       cachedName="ClienteID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[ClienteID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[Nombre]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Nombre"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Nombre]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[Apellido]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Apellido"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Apellido]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[PaisID]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="PaisID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[PaisID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[TerritorioID]"
-                      cachedDataType="i4"
-                      cachedName="TerritorioID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[TerritorioID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1551,33 +1351,6 @@ FROM            DimClientes</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[PaisID]"
-                      name="PaisID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Left Input].Columns[PaisID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[TerritorioID]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[TerritorioID]"
-                      name="TerritorioID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Left Input].Columns[TerritorioID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]"
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]"
@@ -1588,61 +1361,6 @@ FROM            DimClientes</property>
                           dataType="System.Int32"
                           description="The input column associated with this output column"
                           name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[ClienteID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[NombreDM]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[NombreDM]"
-                      name="NombreDM">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[Nombre]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[ApellidoDM]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[ApellidoDM]"
-                      name="ApellidoDM">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[Apellido]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[PaisIDDM]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[PaisIDDM]"
-                      name="PaisIDDM">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[PaisID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[TerritorioIDDM]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Merge Join.Outputs[Merge Join Output].Columns[TerritorioIDDM]"
-                      name="TerritorioIDDM">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Tarea Flujo de datos Clientes\Merge Join.Inputs[Merge Join Right Input].Columns[TerritorioID]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1723,39 +1441,6 @@ FROM            DimClientes</property>
                           name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Inputs[Entrada de ordenación].Columns[PaisID]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="PaisID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Inputs[Entrada de ordenación].Columns[TerritorioID]"
-                      cachedDataType="i4"
-                      cachedName="TerritorioID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1808,33 +1493,6 @@ FROM            DimClientes</property>
                           name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]}</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[PaisID]"
-                      name="PaisID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[TerritorioID]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort Clientes.Outputs[Salida de ordenación].Columns[TerritorioID]"
-                      name="TerritorioID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get Clientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]}</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1879,73 +1537,6 @@ FROM            DimClientes</property>
                           name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Inputs[Sort Input].Columns[Nombre]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Nombre"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Inputs[Sort Input].Columns[Apellido]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Apellido"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Inputs[Sort Input].Columns[PaisID]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="PaisID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Inputs[Sort Input].Columns[TerritorioID]"
-                      cachedDataType="i4"
-                      cachedName="TerritorioID"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1968,61 +1559,6 @@ FROM            DimClientes</property>
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Nombre]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Nombre]"
-                      name="Nombre">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Nombre]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Apellido]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[Apellido]"
-                      name="Apellido">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[Apellido]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[PaisID]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[PaisID]"
-                      name="PaisID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[PaisID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[TerritorioID]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos Clientes\Sort DimClientes.Outputs[Sort Output].Columns[TerritorioID]"
-                      name="TerritorioID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Tarea Flujo de datos Clientes\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2206,8 +1742,8 @@ FROM            DimClientes</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Empleados\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2336,8 +1872,8 @@ FROM            DimEmpleados</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Empleados\Get DimEmpleados.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -3108,8 +2644,8 @@ FROM            Empleados</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -3119,57 +2655,6 @@ FROM            Empleados</property>
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VentaID]"
-                      cachedDataType="i4"
-                      cachedName="VentaID"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VentaID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[VentaID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[ClienteID]"
-                      cachedDataType="i4"
-                      cachedName="ClienteID"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ClienteID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[ProductoID]"
-                      cachedDataType="i4"
-                      cachedName="ProductoID"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ProductoID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[ProductoID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[EmpleadoID]"
-                      cachedDataType="i4"
-                      cachedName="EmpleadoID"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EmpleadoID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[EmpleadoID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[FechaID]"
-                      cachedDataType="i4"
-                      cachedName="FechaID"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[FechaID]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cantidad]"
-                      cachedDataType="i2"
-                      cachedName="Cantidad"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cantidad]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[Cantidad]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[PrecioUnitario]"
-                      cachedDataType="cy"
-                      cachedName="PrecioUnitario"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[PrecioUnitario]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[PrecioUnitario]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DetalleVentaID]"
-                      cachedDataType="i4"
-                      cachedName="DetalleVentaID"
-                      externalMetadataColumnId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DetalleVentaID]"
-                      lineageId="Package\Tarea Flujo de Datos Factos\Merge Join.Outputs[Merge Join Output].Columns[DetalleVentaID]" />
-                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
@@ -3197,9 +2682,13 @@ FROM            Empleados</property>
                       dataType="i4"
                       name="EmpleadoID" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaID]"
+                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TerritorioID]"
                       dataType="i4"
-                      name="FechaID" />
+                      name="TerritorioID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TiempoID]"
+                      dataType="i4"
+                      name="TiempoID" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de Datos Factos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cantidad]"
                       dataType="i2"
@@ -3286,8 +2775,8 @@ FROM            FactVentas</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Factos\Get FactVentas.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -4385,8 +3874,8 @@ JOIN
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Fecha\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -4491,8 +3980,8 @@ FROM            DimFecha</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Fecha\Get DimFecha.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -5114,8 +4603,8 @@ FROM            Ventas</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Productos\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -5244,8 +4733,8 @@ FROM            DimProductos</property>
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de Datos Productos\Get DimProductos.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ1]"
+                  connectionManagerID="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
+                  connectionManagerRefId="{54EBD771-487B-4835-A61C-CF40A545003A}:invalid"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -5871,6 +5360,1011 @@ FROM            Productos</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de Datos Territorios"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D07787F4-0127-41A1-82C2-A18B3CF4D943}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de Datos Territorios"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input].Columns[ClienteIDDM]"
+                      cachedDataType="i4"
+                      cachedName="ClienteIDDM"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Nuevo Registro]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Nuevo Registro"
+                  synchronousInputId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(ClienteIDDM)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimClientes"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[ClienteID]"
+                      cachedDataType="i4"
+                      cachedName="ClienteID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ClienteID]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Apellido"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Apellido]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Apellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ClienteID]"
+                      dataType="i4"
+                      name="ClienteID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Apellido]"
+                      dataType="wstr"
+                      length="50"
+                      name="Apellido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Get DimClientes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        ClienteID
+FROM            DimClientes</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimClientes"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DimensionalBikeZ]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]"
+                      name="ClienteID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].ExternalColumns[ClienteID]"
+                      dataType="i4"
+                      name="ClienteID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ClienteID]"
+                      name="ClienteID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Get Territorios"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Get Territorios"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT Clientes.ClienteID, Clientes.Nombre, Clientes.Apellido, Paises.PaisID, Territorios.TerritorioID
+FROM            Territorios INNER JOIN
+                         Paises ON Territorios.PaisID = Paises.PaisID INNER JOIN
+                         Ventas ON Territorios.TerritorioID = Ventas.TerritorioID INNER JOIN
+                         Clientes ON Ventas.ClienteID = Clientes.ClienteID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Territorios"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BikeZ]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[Territorio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[Territorio]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[Territorio]"
+                      name="Territorio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[Grupo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[Grupo]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].Columns[Grupo]"
+                      name="Grupo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      dataType="i4"
+                      name="TerritorioID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[Territorio]"
+                      dataType="wstr"
+                      length="50"
+                      name="Territorio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      name="PaisID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET].ExternalColumns[Grupo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Grupo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[Territorio]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[Territorio]"
+                      name="Territorio" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[Grupo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[Grupo]"
+                      name="Grupo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[ClienteID]"
+                      cachedDataType="i4"
+                      cachedName="ClienteID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[ClienteID]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Apellido"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Apellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Right Input].Columns[ClienteID]"
+                      cachedDataType="i4"
+                      cachedName="ClienteID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Outputs[Sort Output].Columns[ClienteID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteID]"
+                      name="ClienteID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[ClienteID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Apellido]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[Apellido]"
+                      name="Apellido">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input].Columns[Apellido]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output].Columns[ClienteIDDM]"
+                      name="ClienteIDDM">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Right Input].Columns[ClienteID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Territorios"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BikeZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BikeZ]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Territorio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Territorio]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Territorio]"
+                      name="Territorio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Grupo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Grupo]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Grupo]"
+                      name="Grupo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[TerritorioID]"
+                      dataType="i4"
+                      name="TerritorioID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Territorio]"
+                      dataType="wstr"
+                      length="50"
+                      name="Territorio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      name="PaisID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Grupo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Grupo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[TerritorioID]"
+                      name="TerritorioID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Territorio]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Territorio]"
+                      name="Territorio" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[PaisID]"
+                      name="PaisID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Grupo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Grupo]"
+                      name="Grupo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Sort Clientes"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Inputs[Entrada de ordenación].Columns[ClienteID]"
+                      cachedDataType="i4"
+                      cachedName="ClienteID"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\104:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Inputs[Entrada de ordenación].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\105:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Inputs[Entrada de ordenación].Columns[Apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Apellido"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\106:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[ClienteID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[ClienteID]"
+                      name="ClienteID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Tarea Flujo de Datos Territorios\104:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Tarea Flujo de Datos Territorios\105:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Apellido]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación].Columns[Apellido]"
+                      name="Apellido">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Tarea Flujo de Datos Territorios\106:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort DimClientes"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Inputs[Sort Input].Columns[ClienteID]"
+                      cachedDataType="i4"
+                      cachedName="ClienteID"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Outputs[Sort Output].Columns[ClienteID]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Outputs[Sort Output].Columns[ClienteID]"
+                      name="ClienteID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET].Columns[ClienteID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Merge Join Output]"
+              endId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Tarea Flujo de Datos Territorios\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Nuevo Registro]"
+              endId="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Nuevo Registro"
+              startId="Package\Tarea Flujo de Datos Territorios\Conditional Split.Outputs[Nuevo Registro]" />
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Salida de ordenación]"
+              endId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Left Input]"
+              name="Salida de ordenación"
+              startId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Salida de origen de ADO NET]"
+              endId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Inputs[Sort Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de Datos Territorios\Get DimClientes.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Salida de origen de ADO NET1]"
+              endId="Package\Tarea Flujo de Datos Territorios\Sort Clientes.Inputs[Entrada de ordenación]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de Datos Territorios\Get Territorios.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Tarea Flujo de Datos Territorios.Paths[Sort Output]"
+              endId="Package\Tarea Flujo de Datos Territorios\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Tarea Flujo de Datos Territorios\Sort DimClientes.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -5908,19 +6402,27 @@ FROM            Productos</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{F4DA9E57-61A4-43F4-B601-7258862F8F86}"
+      DTS:DTSID="{F03F807C-6B59-4BD4-93B5-BF59A4200D08}"
       DTS:From="Package\Tarea Flujo de Datos Empleados"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
+      DTS:To="Package\Tarea Flujo de Datos Territorios" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{276EF4AE-C592-4CE9-BB4B-F86C81A20F9B}"
+      DTS:From="Package\Tarea Flujo de Datos Territorios"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
       DTS:To="Package\Tarea Flujo de Datos Fecha" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -6086,32 +6588,70 @@ FROM            Productos</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Tarea Flujo de Datos Territorios"
+          TopLeft="278,253" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="332.5,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137,102"
+              EndConnector="62.5,28"
               Start="0,0"
-              End="137,94.5">
+              End="62.5,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47" />
+                    End="0,10" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47"
-                    Point2="0,51"
-                    Point3="4,51" />
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
                   <mssgle:LineSegment
-                    End="133,51" />
+                    End="58.5,14" />
                   <mssgle:CubicBezierSegment
-                    Point1="133,51"
-                    Point2="137,51"
-                    Point3="137,55" />
+                    Point1="58.5,14"
+                    Point2="62.5,14"
+                    Point3="62.5,18" />
                   <mssgle:LineSegment
-                    End="137,94.5" />
+                    End="62.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="395,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.5,32"
+              Start="0,0"
+              End="74.5,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="70.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.5,16"
+                    Point2="74.5,16"
+                    Point3="74.5,20" />
+                  <mssgle:LineSegment
+                    End="74.5,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6419,7 +6959,7 @@ FROM            Productos</property>
         <NodeLayout
           Size="162,42"
           Id="Package\Tarea Flujo de datos Clientes\Sort DimClientes"
-          TopLeft="536,183" />
+          TopLeft="547,183" />
         <NodeLayout
           Size="133,42"
           Id="Package\Tarea Flujo de datos Clientes\Merge Join"
@@ -6429,18 +6969,18 @@ FROM            Productos</property>
           Id="Package\Tarea Flujo de datos Clientes\Conditional Split"
           TopLeft="440,355" />
         <NodeLayout
-          Size="135,42"
+          Size="140,42"
           Id="Package\Tarea Flujo de datos Clientes\Get Clientes"
           TopLeft="348,111" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos Clientes.Paths[Sort Output]"
-          TopLeft="617,225">
+          TopLeft="628,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.6666666666666,56"
+              EndConnector="-92.6666666666666,56"
               Start="0,0"
-              End="-81.6666666666666,48.5">
+              End="-92.6666666666666,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6451,62 +6991,46 @@ FROM            Productos</property>
                     Point2="0,33.2005943536404"
                     Point3="-4,33.2005943536404" />
                   <mssgle:LineSegment
-                    End="-77.6666666666666,33.2005943536404" />
+                    End="-88.6666666666666,33.2005943536404" />
                   <mssgle:CubicBezierSegment
-                    Point1="-77.6666666666666,33.2005943536404"
-                    Point2="-81.6666666666666,33.2005943536404"
-                    Point3="-81.6666666666666,37.2005943536404" />
+                    Point1="-88.6666666666666,33.2005943536404"
+                    Point2="-92.6666666666666,33.2005943536404"
+                    Point3="-92.6666666666666,37.2005943536404" />
                   <mssgle:LineSegment
-                    End="-81.6666666666666,48.5" />
+                    End="-92.6666666666666,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET1]"
-          TopLeft="627.5,150.5">
+          TopLeft="627.75,150.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,32.5"
+              EndConnector="0,32.5"
               Start="0,0"
-              End="-10.5,25">
+              End="0,25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.25"
-                    Point2="0,16.25"
-                    Point3="-4,16.25" />
-                  <mssgle:LineSegment
-                    End="-6.5,16.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,16.25"
-                    Point2="-10.5,16.25"
-                    Point3="-10.5,20.25" />
-                  <mssgle:LineSegment
-                    End="-10.5,25" />
+                    End="0,25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Tarea Flujo de datos Clientes.Paths[Salida de origen de ADO NET]"
-          TopLeft="417.75,153">
+          TopLeft="419,153">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6523,9 +7047,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6559,9 +7081,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6619,9 +7139,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6659,7 +7177,7 @@ FROM            Productos</property>
         <NodeLayout
           Size="174,42"
           Id="Package\Tarea Flujo de Datos Empleados\Get DimEmpleados"
-          TopLeft="470,75" />
+          TopLeft="469,87" />
         <NodeLayout
           Size="155,42"
           Id="Package\Tarea Flujo de Datos Empleados\Get Empleados"
@@ -6667,7 +7185,7 @@ FROM            Productos</property>
         <NodeLayout
           Size="183,42"
           Id="Package\Tarea Flujo de Datos Empleados\Destino de ADO NET"
-          TopLeft="343,475" />
+          TopLeft="205,477" />
         <NodeLayout
           Size="177,42"
           Id="Package\Tarea Flujo de Datos Empleados\Sort DimEmpleados"
@@ -6715,9 +7233,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6751,33 +7267,29 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Tarea Flujo de Datos Empleados.Paths[Salida de origen de ADO NET1]"
-          TopLeft="554.25,117">
+          TopLeft="553.75,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,33"
               Start="0,0"
-              End="0,37.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6799,9 +7311,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6810,21 +7320,33 @@ FROM            Productos</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="-138,59"
               Start="0,0"
-              End="0,49.5">
+              End="-138,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-134,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134,29.5"
+                    Point2="-138,29.5"
+                    Point3="-138,33.5" />
+                  <mssgle:LineSegment
+                    End="-138,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.07703125,19.0576171875,68.1540625,11.384765625"
+              BoundingBox="-103.07703125,34.5,68.1540625,11.384765625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6847,9 +7369,7 @@ FROM            Productos</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7595,6 +8115,234 @@ FROM            Productos</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de Datos Productos\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de Datos Territorios">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Destino de ADO NET"
+          TopLeft="802,420.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Get DimClientes"
+          TopLeft="1025.5,76" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Sort Clientes"
+          TopLeft="824,148.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Sort DimClientes"
+          TopLeft="1022,150.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Merge Join"
+          TopLeft="923,248.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Conditional Split"
+          TopLeft="915,322.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Get Territorios"
+          TopLeft="823,78.5" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Sort Output]"
+          TopLeft="1103,192.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.6666666666666,56"
+              Start="0,0"
+              End="-92.6666666666666,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2005943536404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2005943536404"
+                    Point2="0,33.2005943536404"
+                    Point3="-4,33.2005943536404" />
+                  <mssgle:LineSegment
+                    End="-88.6666666666666,33.2005943536404" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88.6666666666666,33.2005943536404"
+                    Point2="-92.6666666666666,33.2005943536404"
+                    Point3="-92.6666666666666,37.2005943536404" />
+                  <mssgle:LineSegment
+                    End="-92.6666666666666,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Salida de origen de ADO NET]"
+          TopLeft="1102.75,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5"
+              Start="0,0"
+              End="0,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Salida de origen de ADO NET1]"
+          TopLeft="896.25,120.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Salida de ordenación]"
+          TopLeft="895,190.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.6666666666667,58"
+              Start="0,0"
+              End="73.6666666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3863298662704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.3863298662704"
+                    Point2="0,34.3863298662704"
+                    Point3="4,34.3863298662704" />
+                  <mssgle:LineSegment
+                    End="69.6666666666667,34.3863298662704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.6666666666667,34.3863298662704"
+                    Point2="73.6666666666667,34.3863298662704"
+                    Point3="73.6666666666667,38.3863298662704" />
+                  <mssgle:LineSegment
+                    End="73.6666666666667,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Nuevo Registro]"
+          TopLeft="969.333333333333,364.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-75.8333333333333,56"
+              Start="0,0"
+              End="-75.8333333333333,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7347447073474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.7347447073474"
+                    Point2="0,22.7347447073474"
+                    Point3="-4,22.7347447073474" />
+                  <mssgle:LineSegment
+                    End="-71.8333333333333,22.7347447073474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.8333333333333,22.7347447073474"
+                    Point2="-75.8333333333333,22.7347447073474"
+                    Point3="-75.8333333333333,26.7347447073474" />
+                  <mssgle:LineSegment
+                    End="-75.8333333333333,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.9936979166666,27.7347447073474,68.1540625,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de Datos Territorios.Paths[Merge Join Output]"
+          TopLeft="992,290.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET"
+          TopLeft="228,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de Datos Territorios\Get Territorios">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de Datos Territorios\Origen de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
